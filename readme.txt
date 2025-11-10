@@ -1,12 +1,15 @@
-== basecoat-wax ==
+== basecoat ==
 
-Contributors: 
+Contributors:
 Requires at least: 6.8
 Tested up to: 6.8
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Basecoat is a flexible WordPress starter theme designed for building block themes,
+featuring a streamlined development workflow with pre-made PHP includes for CSS and JS on both the front-end and Gutenberg editor,
+PHP linting, a simple Gulp workflow, and a zip export function for easy deployment.
 
 == Changelog ==
 
@@ -16,8 +19,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Copyright ==
 
-basecoat-wax WordPress Theme, (C) 2025 
-basecoat-wax is distributed under the terms of the GNU GPL.
+basecoat WordPress Theme, (C) 2025
+basecoat is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
