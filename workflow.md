@@ -110,7 +110,7 @@ This will:
 ### Code Build
 Gulp is used to automate tasks such as compiling SCSS, linting code, and creating a zip archive of the theme. Below are the key build commands:
 
-### Build CSS
+#### Build CSS
 Compile SCSS files into CSS, generating sourcemaps for easier debugging.
 
 ```bash
@@ -121,7 +121,7 @@ This will:
 - Compile SCSS files into minified CSS (theme.css).
 - Create source maps for easier debugging (theme.css.map).
 
-### Watch SCSS
+#### Watch SCSS
 Watch SCSS files and trigger the build task automatically.
 
 ```bash

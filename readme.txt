@@ -3,7 +3,7 @@
 Contributors:
 Requires at least: 6.8
 Tested up to: 6.8
-Requires PHP: 5.7
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,9 @@ featuring a streamlined development workflow with pre-made PHP includes for CSS 
 PHP linting, a simple Gulp workflow, and a zip export function for easy deployment.
 
 == Changelog ==
+
+= 1.0.1 =
+* Add licence file
 
 = 1.0.0 =
 * Initial release
