@@ -15,7 +15,7 @@ Clone the repository and install the dependencies:
 
 ```bash
 composer install
-npm install
+npm install --dev
 ```
 
 ### Project Structure
@@ -96,6 +96,16 @@ gulp lint-scss
 This will:
 - Format SCSS code according to a consistent style.
 - Automatically fix code style issues where possible.
+
+#### Theme.json Formating
+Format Theme.json file with Prettier
+
+```bash
+gulp format-theme-json
+```
+
+This will:
+- Format Theme.json file according to a consistent style.
 
 ### Code Build
 Gulp is used to automate tasks such as compiling SCSS, linting code, and creating a zip archive of the theme. Below are the key build commands:
