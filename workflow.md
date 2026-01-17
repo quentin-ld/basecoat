@@ -1,5 +1,5 @@
 # Basecoat - Starter Theme
-Basecoat is a simple WordPress starter theme designed for building block themes, featuring a development workflow with pre-made PHP includes for CSS and JS on both the front-end and Gutenberg editor, PHP linting, a simple Gulp workflow, and a zip export function for easy manual deployment.
+Basecoat is a simple WordPress starter theme designed for building block themes, featuring a development workflow with pre-made PHP includes for CSS and JS on both the front-end and Gutenberg editor, PHP linting, a modern npm/esbuild workflow, and a zip export function for easy manual deployment.
 
 ## 🚀 Getting Started
 
@@ -8,7 +8,6 @@ Basecoat is a simple WordPress starter theme designed for building block themes,
 - Composer
 - Node.js & npm
 - WordPress >= **6.0**
-- Gulp.js
 
 ### Installation
 Clone the repository and install the dependencies:
@@ -42,7 +41,16 @@ The theme contains the following directories and files:
 │       ├── themes
 │       └── vendors
 ├── functions.php
-├── gulpfile.js
+├── .config
+│   ├── build.js
+│   ├── esbuild.config.js
+│   ├── esbuild-css.js
+│   ├── esbuild-js.js
+│   ├── esbuild-watch.js
+│   ├── eslint.js
+│   ├── i18n.js
+│   ├── prettier.config.js
+│   └── zip.js
 ├── inc
 │   ├── theme_assets.php
 │   ├── theme_functions.php
@@ -79,7 +87,7 @@ This will:
 Lint your JavaScript files using ESLint:
 
 ```bash
-gulp lint-js
+npm run lint-js
 ```
 
 This will:
@@ -87,56 +95,106 @@ This will:
 - Automatically fix some issues using Prettier & ESLint.
 
 #### SCSS Linting
-Lint SCSS files with Prettier and PostCSS:
+Lint SCSS files with Prettier:
 
 ```bash
-gulp lint-scss
+npm run lint-scss
 ```
 
 This will:
 - Format SCSS code according to a consistent style.
 - Automatically fix code style issues where possible.
 
-#### Theme.json Formating
-Format Theme.json file with Prettier
+#### Theme.json Formatting
+Format Theme.json file with Prettier:
 
 ```bash
-gulp format-theme-json
+npm run format-theme-json
 ```
 
 This will:
 - Format Theme.json file according to a consistent style.
 
 ### Code Build
-Gulp is used to automate tasks such as compiling SCSS, linting code, and creating a zip archive of the theme. Below are the key build commands:
+npm scripts are used to automate tasks such as compiling SCSS, linting code, generating translations, and creating a zip archive of the theme. Below are the key build commands:
 
 #### Build CSS
-Compile SCSS files into CSS, generating sourcemaps for easier debugging.
+Compile SCSS files into CSS using esbuild, generating sourcemaps for easier debugging.
 
 ```bash
-gulp build-css
+npm run build-css
 ```
 
 This will:
 - Compile SCSS files into minified CSS (theme.css).
 - Create source maps for easier debugging (theme.css.map).
+- Process CSS with PostCSS (autoprefixer, media query optimization, etc.).
 
-#### Watch SCSS
+#### Build JavaScript
+Process JavaScript files (currently only linting, no compilation).
+
+```bash
+npm run build-js
+```
+
+This will:
+- Lint JavaScript files for code quality and consistency.
+
+#### Build Translations
+Generate translation files (.pot) for internationalization.
+
+```bash
+npm run build-i18n
+```
+
+This will:
+- Generate or update the `.pot` translation file in the `languages/` directory.
+- Use WP-CLI to extract translatable strings from PHP files.
+
+#### Watch Files
 Watch SCSS files and trigger the build task automatically.
 
 ```bash
-gulp watch-scss
+npm run watch
+```
+
+or
+
+```bash
+npm run watch-scss
 ```
 
 This will:
 - Watch all SCSS files in the `assets/scss/` directory for changes.
 - Trigger a rebuild of the CSS whenever a change is detected.
 
+#### Complete Build
+Run the complete build process (linting, building, and packaging).
+
+```bash
+npm run build
+```
+
+or
+
+```bash
+npm run default
+```
+
+This will:
+- Lint SCSS files
+- Build CSS
+- Lint JavaScript
+- Lint PHP
+- Format theme.json
+- Generate translations
+- Create a zip archive of the theme
+
 #### Zip Theme
 Create a zip archive of the theme.
 
 ```bash
-gulp zip-theme
+npm run zip-theme
 ```
 
 This will:
