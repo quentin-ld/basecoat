@@ -17,56 +17,6 @@ composer install
 npm install --dev
 ```
 
-### Project Structure
-The theme contains the following directories and files:
-
-```bash
-.
-├── assets
-│   ├── css
-│   │   ├── theme.css
-│   │   └── theme.css.map
-│   ├── fonts
-│   │   └── index.php
-│   ├── images
-│   │   └── index.php
-│   ├── js
-│   │   └── theme.js
-│   └── scss
-│       ├── abstracts
-│       ├── base
-│       ├── components
-│       ├── layout
-│       ├── pages
-│       ├── themes
-│       └── vendors
-├── functions.php
-├── .config
-│   ├── build.js
-│   ├── esbuild.config.js
-│   ├── esbuild-css.js
-│   ├── esbuild-js.js
-│   ├── esbuild-watch.js
-│   ├── eslint.js
-│   ├── i18n.js
-│   ├── prettier.config.js
-│   └── zip.js
-├── inc
-│   ├── theme_assets.php
-│   ├── theme_functions.php
-│   └── theme_supports.php
-├── parts
-│   ├── footer.html
-│   └── header.html
-├── README.md
-├── readme.txt
-├── screenshot.png
-├── style.css
-├── templates
-│   └── index.html
-└── theme.json
-```
-
 ## Development Workflow
 
 ### 🧹 Code Quality
