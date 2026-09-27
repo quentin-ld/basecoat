@@ -1,165 +1,45 @@
-# Basecoat - Starter Theme
-Basecoat is a simple WordPress starter theme designed for building block themes, featuring a development workflow with pre-made PHP includes for CSS and JS on both the front-end and Gutenberg editor, PHP linting, a modern npm/esbuild workflow, and a zip export function for easy manual deployment.
+# Basecoat — workflow
 
-## 🚀 Getting Started
+The workflow is the harness's, and the block at the end of this file is its
+authoritative description. That block is generated, so it cannot drift from the
+tooling it describes.
 
-### Prerequisites
-- PHP **7.4 or higher** (tested up to PHP 8.4)
-- Composer
-- Node.js & npm
-- WordPress >= **6.0**
+Everything that used to be written above it described a toolchain this project
+no longer has: **PHP-CS-Fixer**, **esbuild**, a private **ESLint** and
+**Prettier** config, a `local-wp-cli.sh` shim reaching into Local's `sites.json`,
+and a hand-written zip step. All of it was replaced by **WordPress Coding
+Standards**, **`@wordpress/scripts`** and **`wp dist-archive`**, and it was
+removed rather than updated because a stale instruction is worse than none.
 
-### Installation
-Clone the repository and install the dependencies:
+For the commands themselves, run `bin/harness help`, or read `AGENTS.md`.
 
-```bash
-composer install
-npm install --dev
-```
+<!-- harness:start -->
+## Harness commands (0.1.0)
 
-## Development Workflow
-
-### 🧹 Code Quality
-Basecoat enforces strict coding standards and static analysis to avoid bugs and maintain clean code.
-
-#### PHP Linting
-Run PHP linting with:
+The canonical entry point is `bin/harness`. It resolves DDEV, then LocalWP,
+then the host, so the same command works in every environment:
 
 ```bash
-composer run lint:php
+bin/harness doctor     # backend, tools, graft, manifest
+bin/harness verify     # the pre-push gate
+bin/harness pot        # pot + mo + json + php
+bin/harness zip        # distributable archive
+bin/harness package    # build + pot + zip
+bin/harness help       # everything else
 ```
 
-This will:
-- Use **PHP CS Fixer** to automatically fix code style issues.
-- Use **PHPStan** for static analysis and bug detection.
+**Tests.** This project is a theme, and a theme carries no test layer (ADR 0009): `test`, `integration`, `coverage`, `mutation`, `counterfactual`, `test:js` and `e2e` each print one sentence and exit 0. Lint, the build and the hooks are unchanged.
 
-#### JavaScript Linting
-Lint your JavaScript files using ESLint:
+Enable the hooks once per clone:
 
 ```bash
-npm run lint-js
+git config core.hooksPath .githooks
 ```
 
-This will:
-- Check for code quality and consistency.
-- Automatically fix some issues using Prettier & ESLint.
-
-#### SCSS Linting
-Lint SCSS files with Prettier:
-
-```bash
-npm run lint-scss
-```
-
-This will:
-- Format SCSS code according to a consistent style.
-- Automatically fix code style issues where possible.
-
-#### Theme.json Formatting
-Format Theme.json file with Prettier:
-
-```bash
-npm run format-theme-json
-```
-
-This will:
-- Format Theme.json file according to a consistent style.
-
-### Code Build
-npm scripts are used to automate tasks such as compiling SCSS, linting code, generating translations, and creating a zip archive of the theme. Below are the key build commands:
-
-#### Build CSS
-Compile SCSS files into CSS using esbuild, generating sourcemaps for easier debugging.
-
-```bash
-npm run build-css
-```
-
-This will:
-- Compile SCSS files into minified CSS (theme.css).
-- Create source maps for easier debugging (theme.css.map).
-- Process CSS with PostCSS (autoprefixer, media query optimization, etc.).
-
-#### Build JavaScript
-Process JavaScript files (currently only linting, no compilation).
-
-```bash
-npm run build-js
-```
-
-This will:
-- Lint JavaScript files for code quality and consistency.
-
-#### Build Translations
-Generate translation files (.pot) for internationalization.
-
-```bash
-npm run build-i18n
-```
-
-This will:
-- Generate or update the `.pot` translation file in the `languages/` directory.
-- Use WP-CLI to extract translatable strings from PHP files.
-
-#### Watch Files
-Watch SCSS files and trigger the build task automatically.
-
-```bash
-npm run watch
-```
-
-or
-
-```bash
-npm run watch-scss
-```
-
-This will:
-- Watch all SCSS files in the `assets/scss/` directory for changes.
-- Trigger a rebuild of the CSS whenever a change is detected.
-
-#### Complete Build
-Run the complete build process (linting, building, and packaging).
-
-```bash
-npm run build
-```
-
-or
-
-```bash
-npm run default
-```
-
-This will:
-- Lint SCSS files
-- Build CSS
-- Lint JavaScript
-- Lint PHP
-- Format theme.json
-- Generate translations
-- Create a zip archive of the theme
-
-#### Zip Theme
-Create a zip archive of the theme.
-
-```bash
-npm run zip-theme
-```
-
-This will:
-- Create a `.zip` archive of the theme, excluding unnecessary files like `node_modules` and `.git`.
-- Save the archive in the root directory of the project (e.g., `basecoat.zip`).
-
-##### Uploading Your Theme
-
-Once the zip file is created, you can upload it to a WordPress site:
-
-1. Log in to the WordPress admin dashboard.
-2. Navigate to **Appearance > Themes**.
-3. Click **Add New** and then click **Upload Theme**.
-4. Choose the zip file (`basecoat.zip`) generated by Gulp and click **Install Now**.
-5. After installation, click **Activate** to use the theme.
+The tables in this file describe what each gate runs; `bin/harness` is what
+actually runs it. When the two disagree, `bin/harness` wins and this file is
+wrong.
+<!-- harness:end -->
 
 ## License
 
