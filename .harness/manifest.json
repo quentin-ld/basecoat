@@ -1,5 +1,5 @@
 {
-  "commit": "5012af2",
+  "commit": "feaba20",
   "files": {
     ".agents/docs/DISTILLATION.md": {
       "class": "owned",
@@ -59,7 +59,7 @@
     },
     ".agents/skills/test-author/SKILL.md": {
       "class": "owned",
-      "sha256": "0db49b4ce9e788b589c645a67014011dd1705758bee252d2dc79ce5f1f63ad5a"
+      "sha256": "1f2f3b11923dbe36b74b2342354dd9dd22e65818fc6df68c764689e9dbe09e40"
     },
     ".agents/skills/translation/SKILL.md": {
       "class": "owned",
@@ -168,7 +168,7 @@
     ".reasonix/skills/test-author/SKILL.md": {
       "class": "mirror",
       "from": ".agents/skills/test-author/SKILL.md",
-      "sha256": "0db49b4ce9e788b589c645a67014011dd1705758bee252d2dc79ce5f1f63ad5a"
+      "sha256": "1f2f3b11923dbe36b74b2342354dd9dd22e65818fc6df68c764689e9dbe09e40"
     },
     ".reasonix/skills/translation/SKILL.md": {
       "class": "mirror",
@@ -198,7 +198,7 @@
     },
     "bin/harness": {
       "class": "owned",
-      "sha256": "7e98c4c6f3394a1b894d843e142e261033d7a87d7ffca4d09d01c72de349455a"
+      "sha256": "9bb6bc46f9c71898b3ea0f63549f89881d3bb00c4be1aba0057456200dd5174a"
     },
     "composer.json": {
       "class": "merge",
