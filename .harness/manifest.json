@@ -1,5 +1,5 @@
 {
-  "commit": "feaba20",
+  "commit": "7b81b2c",
   "files": {
     ".agents/docs/DISTILLATION.md": {
       "class": "owned",
@@ -198,7 +198,7 @@
     },
     "bin/harness": {
       "class": "owned",
-      "sha256": "9bb6bc46f9c71898b3ea0f63549f89881d3bb00c4be1aba0057456200dd5174a"
+      "sha256": "d03b43a884ce87120ccb1f2d6e3bde4ed20a040174aa4dcc8ccceec50360dca5"
     },
     "composer.json": {
       "class": "merge",
