@@ -1,5 +1,5 @@
 {
-  "commit": "4e638d2",
+  "commit": "6c69405",
   "files": {
     ".agents/docs/DISTILLATION.md": {
       "class": "owned",
@@ -227,7 +227,7 @@
     },
     ".config/phpstan.neon": {
       "class": "owned",
-      "sha256": "8e5ff8ec95452ff5dac643d0bb5fddf9a3e0d28563112c9689543c77a093f96f"
+      "sha256": "44a10d6db888f9dd8ef9971875feaa962bc6686ec7fe8521c7ccb97a7fd56803"
     },
     ".distignore": {
       "class": "lines",
@@ -239,7 +239,7 @@
     },
     ".githooks/pre-push": {
       "class": "owned",
-      "sha256": "a8e006ca1a79dd04cb0cf5927fa1c9a9934c49ae93cca86f299744e1fcbcae40"
+      "sha256": "2732703e80b01572a123e97b6065d51b8ac84781214116b3743f5e916d62af4f"
     },
     ".githooks/pre-release": {
       "class": "owned",
@@ -522,7 +522,7 @@
     },
     "bin/harness": {
       "class": "owned",
-      "sha256": "b8823057dea81c876a5094cc63bcc4d56137af067ab2d8b2befdd4ac639bec72"
+      "sha256": "cc38a8b91a02d096c6e74e7946f7fee181015abd331ba5acff2d2925655dfa6f"
     },
     "composer.json": {
       "class": "merge",
