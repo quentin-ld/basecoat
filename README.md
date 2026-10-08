@@ -1,14 +1,11 @@
-<!--
-    Generated once, because a project without a README has no onboarding at
-    all. Replace every sentence below with the real thing. The harness only
-    ever rewrites the section between its markers; everything else in this
-    file is yours and will not be touched.
--->
-
 # Basecoat
 
-One paragraph on what this is and who it is for. Say what problem it solves
-before saying how — the reader decides in the first two lines.
+Basecoat is a starter, not a theme you ship. It is a complete standalone block
+theme — `theme.json`, templates, parts, the editor styles — built so a new
+project begins from one consistent set of choices instead of a blank slate.
+
+It is for building block themes on. The conventions it carries are the ones the
+other themes here follow, which is why it is the reference they are read against.
 
 <!-- harness:start -->
 ## Development
@@ -40,7 +37,7 @@ bin/harness setup   # one-time: dependencies and this project's toolchain
 | `composer run make:pot` | regenerate `languages/basecoat.pot` |
 | `npm run zip` | the distributable archive |
 
-**Tests.** This project is a theme, and a theme carries no test layer (ADR 0009): `test`, `integration`, `coverage`, `mutation`, `counterfactual`, `test:js` and `e2e` each print one sentence and exit 0. Lint, the build and the hooks are unchanged.
+**Tests.** This project is a theme, and the harness carries no test layer for themes: `test`, `integration`, `coverage`, `mutation`, `counterfactual`, `test:js` and `e2e` each print one sentence and exit 0. Lint, the build and the hooks are unchanged.
 
 Assets: `npm start` to watch, `npm run build` for a one-shot bundle.
 
@@ -58,11 +55,21 @@ project rather than a missing environment.
 
 ## Installation
 
-1. Install it from the WordPress dashboard, or copy the directory into a
-   WordPress install.
-2. Activate it.
-3. …
+Basecoat is a starting point, so it is used once per project rather than
+installed from a directory:
+
+1. Copy this directory into `wp-content/themes/` under the name the new site
+   will use, and edit the `Theme Name:`, `Text Domain:` and version headers in
+   `style.css`. Rename the text domain's `.pot` in `languages/` to match.
+2. Run `composer install`, `npm install` and `bin/harness setup` — see the
+   Development section below.
+3. Activate it.
+
+To try it as it stands, copy the directory in and activate it: it needs no
+parent and nothing else installed.
 
 ## Support & Contribution
 
-Where to ask questions, and how to contribute.
+Basecoat is developed in this repository. Read `AGENTS.md` first — it carries
+the project facts, the conventions and the gates, and it is where the
+block-theme shape is written down for the themes built from this one.
