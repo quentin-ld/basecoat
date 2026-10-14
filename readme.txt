@@ -13,6 +13,9 @@ PHP linting, a modern npm/esbuild workflow, and a zip export function for easy d
 
 == Changelog ==
 
+= 2.0.1 =
+* Maintenance release
+
 = 1.0.1 =
 * Add licence file
 
