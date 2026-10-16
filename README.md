@@ -7,6 +7,31 @@ project begins from one consistent set of choices instead of a blank slate.
 It is for building block themes on. The conventions it carries are the ones the
 other themes here follow, which is why it is the reference they are read against.
 
+## Compatibility
+
+### Requirements
+
+<!-- harness:compat:start -->
+- WordPress **6.8+** (tested up to **6.8**)
+- PHP **8.1+**
+- Version **2.0.1**
+<!-- harness:compat:end -->
+
+## Installation
+
+Basecoat is a starting point, so it is used once per project rather than
+installed from a directory:
+
+1. Copy this directory into `wp-content/themes/` under the name the new site
+   will use, and edit the `Theme Name:`, `Text Domain:` and version headers in
+   `style.css`. Rename the text domain's `.pot` in `languages/` to match.
+2. Run `composer install`, `npm install` and `bin/harness setup` — see the
+   Development section below.
+3. Activate it.
+
+To try it as it stands, copy the directory in and activate it: it needs no
+parent and nothing else installed.
+
 <!-- harness:start -->
 ## Development
 
@@ -52,21 +77,6 @@ bin/harness help            # every command
 resolved per project, and a direct call fails in a way that looks like a broken
 project rather than a missing environment.
 <!-- harness:end -->
-
-## Installation
-
-Basecoat is a starting point, so it is used once per project rather than
-installed from a directory:
-
-1. Copy this directory into `wp-content/themes/` under the name the new site
-   will use, and edit the `Theme Name:`, `Text Domain:` and version headers in
-   `style.css`. Rename the text domain's `.pot` in `languages/` to match.
-2. Run `composer install`, `npm install` and `bin/harness setup` — see the
-   Development section above.
-3. Activate it.
-
-To try it as it stands, copy the directory in and activate it: it needs no
-parent and nothing else installed.
 
 ## Support & Contribution
 
