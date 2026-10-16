@@ -3,13 +3,13 @@
 Contributors: quentinldd
 Requires at least: 6.8
 Tested up to: 6.8
-Requires PHP: 7.4
+Requires PHP: 8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Basecoat is a flexible WordPress starter theme designed for building block themes,
 featuring a streamlined development workflow with pre-made PHP includes for CSS and JS on both the front-end and Gutenberg editor,
-PHP linting, a modern npm/esbuild workflow, and a zip export function for easy deployment.
+PHP linting, a front-end build on `@wordpress/scripts`, and a zip export function for easy deployment.
 
 == Changelog ==
 
